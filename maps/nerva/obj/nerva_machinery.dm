@@ -24,3 +24,10 @@
 	mask_type = /obj/item/clothing/mask/breath
 	req_access = list(access_expedition)
 	islocked = 1
+/datum/map/nerva
+	security_state = /decl/security_state/default/nerva
+
+/decl/security_state/default/nerva/Initialize()
+	. = ..()
+	standard_security_levels += highest_standard_security_level
+	comm_console_security_levels += highest_standard_security_level
