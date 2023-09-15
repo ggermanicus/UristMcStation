@@ -141,7 +141,8 @@
 	"<span class='info'>[src] pulls out [O] and places it in front of you.</span>")
 	var/user_msg = "<span class='game say'><span class='name'>[src.name]</span> whispers to you, <span class='message emote'><span class='body'>\"Thanks for your help.\"</span></span></span>"
 	M.visible_message("<span class='info'>[src] whispers something to [M].</span>", user_msg)
-
+	D.quantity -=1
+	update_trade_item_ui(D)
 
 /mob/living/simple_animal/passive/npc/proc/CanPurchase(mob/M, var/access)
 	var/obj/item/card/id/id_card = M.GetIdCard()
